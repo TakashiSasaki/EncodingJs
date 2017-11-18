@@ -1,0 +1,3 @@
+[submodule "encoding.js"]
+	path = encoding.js
+	url = https://github.com/polygonplanet/encoding.js.git
