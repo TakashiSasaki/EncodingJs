@@ -1,6 +1,6 @@
-.PHONY: all test testEncodingJs clean
+.PHONY: all test clean
 
-all: test EncodingJs.js.html wrapper.gs EncodingJs.gs
+all: test EncodingJs.js.html EncodingJs.gs
 
 test: 
 	node testEncodingJs.js
@@ -11,9 +11,9 @@ EncodingJs.js.html: EncodingJs.gs
 EncodingJs.gs: EncodingJs.js
 	browserify -r ./EncodingJs.js:EncodingJs -o $@ 
 
-wrapper.gs: EncodingJs.js
-	cp $< $@
+#wrapper.gs: EncodingJs.js
+#	cp $< $@
 
 clean:
-	rm -f Encoding.gs Encoding.js.html
+	rm -f EncodingJs.gs EncodingJs.js.html
 
